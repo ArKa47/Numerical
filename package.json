@@ -8,6 +8,8 @@
     "@testing-library/user-event": "^12.8.3",
     "axios": "^0.21.1",
     "chart.js": "^2.9.4",
+    "expect": "^26.6.2",
+    "expect.js": "^0.3.1",
     "function-plot": "^1.22.7",
     "interpolating-polynomial": "^1.1.2",
     "mathjs": "^9.3.2",
