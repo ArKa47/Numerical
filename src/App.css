@@ -1,0 +1,231 @@
+.App {
+  text-align: center;
+}
+
+.white{
+  color: azure;
+  font-weight: 700;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-rigth{
+  text-align: right;
+}
+
+.cute{
+  font-weight: 700;
+  text-align: left;
+}
+
+.cute-mid{
+  font-weight: 700;
+  text-align: center;
+}
+
+.App-info{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 5s linear;
+  }
+}
+
+.App-header {
+  background-color: #5a35ff;
+  min-height: 50vh;
+  font-size: calc(10px + 2vmin);
+  color: rgb(255, 93, 241);
+}
+
+.App-link {
+  color: #ffffff;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.App-body {
+  background-color: #297241;
+  min-height: 25vh;
+  font-size: calc(10px + 2vmin);
+  color: rgb(255, 166, 93);
+}
+
+.App-header2 {
+  background-color: #3835ff;
+  min-height: 100vh;
+  font-size: calc(10px + 2vmin);
+  color: rgb(220, 255, 93);
+}
+
+/*container*/
+.my-container {
+  background-color: #ffffff;
+  padding: 10px;
+  margin: auto;
+  max-width: 50vh;
+  overflow: auto;
+}
+
+.my-SubcontainerL {
+  background-color: #ffffff;
+  width: 20vh;
+  float: left;
+}
+.my-SubcontainerM {
+  background-color: #ffffff;
+  padding-bottom: 10px;
+  margin: auto;
+  max-width: 20vh;
+  overflow: auto;
+}
+.my-SubcontainerR {
+  background-color: #ffffff;
+  width: 20vh;
+  float: right;
+}
+.chart-container {
+  border-top-style: solid;
+  border-top-color: azure;
+  border-bottom-style: solid;
+  border-bottom-color: azure;
+  position: relative;
+  margin: auto;
+  height: 25vh;
+  width: 25vw;
+}
+
+.sub_chart-container {
+  border-top-style: solid;
+  border-top-color: rgb(86, 247, 247);
+  border-bottom-style: solid;
+  border-bottom-color: rgb(86, 247, 247);
+  position: relative;
+  padding-top: 15px;
+  margin: auto;
+  height: 57vh;
+  width: 40vw;
+}
+/**/
+
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.float-rigth{
+  position: absolute;
+  top: 2%;
+  left: 0%;
+}
+
+.vertical-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+input[type=text], select {
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+/*column*/
+.column {
+  float: left;
+  width: 25%;
+  padding: 10px;
+  /*height: 300px; /* Should be removed. Only for demonstration */
+}
+.column-half {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  /*height: 300px; /* Should be removed. Only for demonstration */
+}
+.column-third {
+  float: left;
+  width: 33.33%;
+  padding: 10px;
+  /*height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/**/
+.float-customise{
+  float: right;
+  position: relative;
+}
+/**/
+.my-input {
+  padding: 10px;
+  margin: 10px;
+  width: 7%;
+  border: 2px solid rgb(80, 255, 255);
+  border-radius: 40px;
+  text-align: center;
+}
+.my-input:focus{
+  border: none;
+  outline:none;
+  caret-color: rgb(255, 255, 255);
+  background-color: rgb(67, 235, 193)
+}
+
+.my-input-equal {
+  padding: 10px;
+  margin: 10px;
+  width: 7%;
+  border: 2px solid rgb(252, 255, 80);
+  border-radius: 40px;
+  text-align: center;
+}
+.my-input-equal:focus{
+  border: none;
+  outline:none;
+  caret-color: rgb(0, 0, 0);
+  background-color: rgb(255, 246, 113)
+}
+
+::placeholder {
+  color: rgba(148, 148, 148, 0.3);
+  opacity: 1; /* Firefox */
+}
+/**/
+

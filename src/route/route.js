@@ -1,0 +1,30 @@
+import React from 'react'
+import { Switch, Route } from 'react-router-dom'
+
+import Home from '../pages/home'
+import Bisec from '../pages/root of equation/bisec'
+import Falsi from '../pages/root of equation/falsi'
+import Onepoint from '../pages/root of equation/Onepoint'
+import Secant from '../pages/root of equation/Secant'
+import Newthon from '../pages/root of equation/Newthon'
+import crammer from '../pages/matrix/crammer'
+import guass from '../pages/matrix/guass_eliminate'
+import API from '../pages/API_check'
+import swag from '../pages/swag'
+import Newton_i from '../pages/Interpolation/newton_interpolation'
+
+export default () => (
+    <Switch>
+        <Route exact path="/" component={Home}/>
+        <Route path="/Bisec" component={Bisec}/>
+        <Route path="/Falsi" component={Falsi}/>
+        <Route path="/Secant" component={Secant}/>
+        <Route path="/Newthon" component={Newthon}/>
+        <Route path="/Onepoint" component={Onepoint}/>
+        <Route path="/crammer" component={crammer}/>
+        <Route path="/guass" component={guass}/>
+        <Route path="/Api" component={API}/>
+        <Route path="/swag" component={swag}/>
+        <Route path="/Newton_Inter" component={Newton_i}/>
+    </Switch>
+)
