@@ -21,7 +21,6 @@ import test from '../pages/Interpolation/test'
 export default () => (
     <Switch>
         <Route exact path="/" component={Home}/>
-        <Route path="/react/" component={Home}/>
         <Route path="/Bisec" component={Bisec}/>
         <Route path="/Falsi" component={Falsi}/>
         <Route path="/Secant" component={Secant}/>
@@ -37,5 +36,6 @@ export default () => (
         <Route path="/lagrange_Inter" component={lagrange}/>
         <Route path="/spline_Inter" component={spline}/>
         <Route path="/TEST" component={test}/>
+        <Route component={Home} />
     </Switch>
 )
