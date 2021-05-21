@@ -1,5 +1,5 @@
 # Check out the website of this project here
-https://ArKa47.github.io/react/
+https://ArKa47.github.io/
 
 
 # Getting Started with Create React App
