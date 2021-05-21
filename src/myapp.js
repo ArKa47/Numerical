@@ -110,33 +110,6 @@ class App extends Component {
           </div>
         </nav>
         <Routing></Routing>
-        <div className="cute-mid" id="react">
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <h1 class="title is-1">Wellcome you from react</h1>
-          <h2 class="subtitle"> Please press home to start a web page Property</h2>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-        </div>
         <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
           <div className="container">
             <div className="navbar-end">
