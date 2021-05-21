@@ -110,6 +110,7 @@ class App extends Component {
           </div>
         </nav>
         <Routing></Routing>
+        <p>Hello?</p>
         <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
           <div className="container">
             <div className="navbar-end">
