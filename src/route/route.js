@@ -21,7 +21,7 @@ import test from '../pages/Interpolation/test'
 export default () => (
     <Switch>
         <Route exact path="/" component={Home}/>
-        <Route path="/react" component={Home}/>
+        <Route path="/react/" component={Home}/>
         <Route path="/Bisec" component={Bisec}/>
         <Route path="/Falsi" component={Falsi}/>
         <Route path="/Secant" component={Secant}/>
