@@ -4,9 +4,9 @@ import create_matrice from '../../fumction/crammer_support'
 import resetelement from '../../fumction/resetElement'
 import showMatrix from '../../fumction/crammer_show'
 import cramer_cal from '../../fumction/crammer_cal';
-import crammer from '../../pictures/crammer.jpg'
 import createButton from '../../fumction/createButton'
 import crammer_detail from '../../fumction/crammer_detail'
+import lu_decom from '../../pictures/ludecom.png'
 import axios from 'axios';
 
 let button_exit = false;
@@ -14,22 +14,11 @@ let detail_exit = false;
 
 function cramer ()
 {
-    const detail = () =>
-    {
-        let pp = parseInt(document.getElementById("n").value)
-        resetelement("inner_detail_show")
-        crammer_detail(pp,"inner_detail_show")
-    }
     const cram = () =>
     {
         let pp = parseInt(document.getElementById("n").value)
         resetelement("ans")
         cramer_cal(pp,"ans");
-        if(!detail_exit)
-        {
-            detail_exit = true;
-            createButton("Show Detail", "button is-info", detail, "inner_detail_button");
-        }
     }
     const pop = () =>
     {
@@ -38,7 +27,7 @@ function cramer ()
         showMatrix(pp,"show")
         if(button_exit != true){
             button_exit = true;
-           createButton("Crammer rule", "button is-warning", cram, "crammer");
+           createButton("Gaussian rule", "button is-warning", cram, "crammer");
         }
     }
     const add = () =>
@@ -53,7 +42,7 @@ function cramer ()
     async function api_call ()
     {
         try{
-            const data = await axios.get("https://my-json-server.typicode.com/ArKa47/api/matrix/cram").then(response => response.data)
+            const data = await axios.get("https://my-json-server.typicode.com/ArKa47/api/matrix/lu_decom").then(response => response.data)
             console.log(data)
             let arr = data["Array"];
             //console.log(arr)
@@ -79,13 +68,13 @@ function cramer ()
         <div className="App">
             <br></br>
             <div className="container">
-                <h1 className="title is-1" id="test">Crammer Rule</h1>
+                <h1 className="title is-1" id="test">Lu decomposition</h1>
                 <h1 className="subtitle">Matrix</h1>
                 <br></br>
-                <img src={crammer} alt="crammer"/>
+                <img src={lu_decom} alt="ludecom"/>
                 <div className="cute-mid">
                     <br></br>
-                    <p>Formular is : xi = det(Ai)/det(A)</p>
+                    <p>Simple eliminate matrix and find each of variable</p>
                 </div>
                 <br></br>
                 <div className="my-SubcontainerM">

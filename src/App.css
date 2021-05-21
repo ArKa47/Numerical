@@ -48,7 +48,7 @@
 }
 
 .App-header {
-  background-color: #5a35ff;
+  background-color: #35ff82;
   min-height: 50vh;
   font-size: calc(10px + 2vmin);
   color: rgb(255, 93, 241);
@@ -75,7 +75,7 @@
 }
 
 .App-header2 {
-  background-color: #3835ff;
+  background-color: #35ffab;
   min-height: 100vh;
   font-size: calc(10px + 2vmin);
   color: rgb(220, 255, 93);

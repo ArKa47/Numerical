@@ -8,7 +8,7 @@ let data = {
       "version": "1.0.0",
       "title": "Swagger management"
     },
-    "host": "https://my-json-server.typicode.com/ArKa47/api",
+    "host": "my-json-server.typicode.com/ArKa47/api",
     "tags": [
       {
         "name": "Root of Equation",
@@ -38,7 +38,7 @@ let data = {
     ],
     //
       "paths": {
-        "/A path to Bisection": {
+        "/root_of_equation/bisec": {
             "get": {
                 "tags": [
                 "Root of Equation"
@@ -46,59 +46,11 @@ let data = {
                 "summary": "Bisection",
                 "description": "",
                 "operationId": "bisec",
-                "consumes": [
-                "application/json",
-                "application/xml"
-                ],
-                "produces": [
-                "application/xml",
-                "application/json"
-                ],
-                "parameters": [
-                {
-                    "in": "body",
-                    "name": "body",
-                    "description": "",
-                    "required": false,
-                    "schema": {
-                    "properties": {
-                        "Function": {
-                        "type": "string",
-                        "example": "x^4-13"
-                        },
-                        "xl": {
-                            "type": "integer",
-                            "example": "1.5"
-                        },
-                        "xr": {
-                            "type": "integer",
-                            "example": "2.0"
-                        },
-                        "interval": {
-                            "type": "integer",
-                            "example": "1"
-                        },
-                        "Epsilon": {
-                            "type": "integer",
-                            "example": "0.000001"
-                        }
-                    }
-                    }
-                }
-                ],
                 "responses": {
                 "200": {
                     "description": "Valid input"
                 }
                 },
-                "security": [
-                {
-                    "petstore_auth": [
-                    "write:pets",
-                    "read:pets"
-                    ]
-                }
-                ]
             },
             /*
             "get": {
@@ -107,7 +59,7 @@ let data = {
                 ],
             }*/
         },
-        "/A path to False Position": {
+        "/root_of_equation/falsi": {
             "get": {
                 "tags": [
                 "Root of Equation"
@@ -115,59 +67,11 @@ let data = {
                 "summary": "False Position",
                 "description": "",
                 "operationId": "falsi",
-                "consumes": [
-                "application/json",
-                "application/xml"
-                ],
-                "produces": [
-                "application/xml",
-                "application/json"
-                ],
-                "parameters": [
-                {
-                    "in": "body",
-                    "name": "body",
-                    "description": "",
-                    "required": false,
-                    "schema": {
-                    "properties": {
-                        "Function": {
-                        "type": "string",
-                        "example": "x^4-13"
-                        },
-                        "xl": {
-                            "type": "integer",
-                            "example": "1.5"
-                        },
-                        "xr": {
-                            "type": "integer",
-                            "example": "2.0"
-                        },
-                        "interval": {
-                            "type": "integer",
-                            "example": "1"
-                        },
-                        "Epsilon": {
-                            "type": "integer",
-                            "example": "0.000001"
-                        }
-                    }
-                    }
-                }
-                ],
                 "responses": {
                 "200": {
                     "description": "Valid input"
                 }
-                },
-                "security": [
-                {
-                    "petstore_auth": [
-                    "write:pets",
-                    "read:pets"
-                    ]
                 }
-                ]
             },
             /*
             "get": {
@@ -176,7 +80,7 @@ let data = {
                 ],
             }*/
         },
-        "/A path to Newthon Rhapson": {
+        "/root_of_equation/newton": {
             "get": {
                 "tags": [
                 "Root of Equation"
@@ -184,55 +88,11 @@ let data = {
                 "summary": "Newton",
                 "description": "",
                 "operationId": "newton",
-                "consumes": [
-                "application/json",
-                "application/xml"
-                ],
-                "produces": [
-                "application/xml",
-                "application/json"
-                ],
-                "parameters": [
-                {
-                    "in": "body",
-                    "name": "body",
-                    "description": "",
-                    "required": false,
-                    "schema": {
-                    "properties": {
-                        "Function": {
-                        "type": "string",
-                        "example": "x^4-13"
-                        },
-                        "initial x": {
-                            "type": "integer",
-                            "example": "1"
-                        },
-                        "interval": {
-                            "type": "integer",
-                            "example": "1"
-                        },
-                        "Range": {
-                            "type": "integer",
-                            "example": "5"
-                        }
-                    }
-                    }
-                }
-                ],
                 "responses": {
                 "200": {
                     "description": "Valid input"
                 }
-                },
-                "security": [
-                {
-                    "petstore_auth": [
-                    "write:pets",
-                    "read:pets"
-                    ]
                 }
-                ]
             },
             /*
             "get": {
@@ -241,7 +101,7 @@ let data = {
                 ],
             }*/
         },
-        "/A path to Secant Method": {
+        "/root_of_equation/secant": {
             "get": {
                 "tags": [
                 "Root of Equation"
@@ -249,59 +109,11 @@ let data = {
                 "summary": "secant",
                 "description": "",
                 "operationId": "secant",
-                "consumes": [
-                "application/json",
-                "application/xml"
-                ],
-                "produces": [
-                "application/xml",
-                "application/json"
-                ],
-                "parameters": [
-                {
-                    "in": "body",
-                    "name": "body",
-                    "description": "",
-                    "required": false,
-                    "schema": {
-                    "properties": {
-                        "Function": {
-                        "type": "string",
-                        "example": "x^4-13"
-                        },
-                        "x1": {
-                            "type": "integer",
-                            "example": "1"
-                        },
-                        "x2": {
-                            "type": "integer",
-                            "example": "4"
-                        },
-                        "interval": {
-                            "type": "integer",
-                            "example": "1"
-                        },
-                        "Range": {
-                            "type": "integer",
-                            "example": "5"
-                        }
-                    }
-                    }
-                }
-                ],
                 "responses": {
                 "200": {
                     "description": "Valid input"
                 }
-                },
-                "security": [
-                {
-                    "petstore_auth": [
-                    "write:pets",
-                    "read:pets"
-                    ]
                 }
-                ]
             },
             /*
             "get": {
@@ -310,55 +122,19 @@ let data = {
                 ],
             }*/
         },
-        "/A path to crammer": {
+        "/matrix/cram": {
             "get": {
                 "tags": [
                 "Matrix"
                 ],
-                "summary": "crammer",
+                "summary": "crammer rule",
                 "description": "",
                 "operationId": "crammer",
-                "consumes": [
-                "application/json",
-                "application/xml"
-                ],
-                "produces": [
-                "application/xml",
-                "application/json"
-                ],
-                "parameters": [
-                {
-                    "in": "body",
-                    "name": "body",
-                    "description": "",
-                    "required": false,
-                    "schema": {
-                    "properties": {
-                        "Array Size": {
-                            "type": "integer",
-                            "example": "3"
-                        },
-                        "Array": {
-                            "type": "integer",
-                            "example": "2 4 -1 = 1 | 4 0 7 = 4 | 1 1 -1 = 0"
-                        },
-                    }
-                    }
-                }
-                ],
                 "responses": {
                 "200": {
                     "description": "Valid input"
                 }
-                },
-                "security": [
-                {
-                    "petstore_auth": [
-                    "write:pets",
-                    "read:pets"
-                    ]
                 }
-                ]
             },
             /*
             "get": {
@@ -367,7 +143,70 @@ let data = {
                 ],
             }*/
         },
-        "/A path to newton": {
+        "/matrix/gauss": {
+            "get": {
+                "tags": [
+                "Matrix"
+                ],
+                "summary": "gauss elimination",
+                "description": "",
+                "operationId": "gauss",
+                "responses": {
+                "200": {
+                    "description": "Valid input"
+                }
+                }
+            },
+            /*
+            "get": {
+                "tag":[
+                    "Root of Equation"
+                ],
+            }*/
+        },
+        "/matrix/gauss_jordan": {
+            "get": {
+                "tags": [
+                "Matrix"
+                ],
+                "summary": "gauss-jordan",
+                "description": "",
+                "operationId": "gauss_jordan",
+                "responses": {
+                "200": {
+                    "description": "Valid input"
+                }
+                }
+            },
+            /*
+            "get": {
+                "tag":[
+                    "Root of Equation"
+                ],
+            }*/
+        },
+        "/matrix/lu_decom": {
+            "get": {
+                "tags": [
+                "Matrix"
+                ],
+                "summary": "lu decomposition",
+                "description": "",
+                "operationId": "lu_decom",
+                "responses": {
+                "200": {
+                    "description": "Valid input"
+                }
+                }
+            },
+            /*
+            "get": {
+                "tag":[
+                    "Root of Equation"
+                ],
+            }*/
+        },
+        "/interpolation/newton_interpolation": {
             "get": {
                 "tags": [
                 "Interpolation"
@@ -375,51 +214,11 @@ let data = {
                 "summary": "newton interpolation",
                 "description": "",
                 "operationId": "newton",
-                "consumes": [
-                "application/json",
-                "application/xml"
-                ],
-                "produces": [
-                "application/xml",
-                "application/json"
-                ],
-                "parameters": [
-                {
-                    "in": "body",
-                    "name": "body",
-                    "description": "",
-                    "required": false,
-                    "schema": {
-                    "properties": {
-                        "x": {
-                            "type": "integer",
-                            "example": "7"
-                        },
-                        "Array Size": {
-                            "type": "integer",
-                            "example": "4"
-                        },
-                        "Array": {
-                            "type": "integer",
-                            "example": "{5,12}, {6,13}, {9,14}, {11,16}"
-                        },
-                    }
-                    }
-                }
-                ],
                 "responses": {
                 "200": {
                     "description": "Valid input"
                 }
-                },
-                "security": [
-                {
-                    "petstore_auth": [
-                    "write:pets",
-                    "read:pets"
-                    ]
                 }
-                ]
             },
             /*
             "get": {
@@ -427,28 +226,54 @@ let data = {
                     "Root of Equation"
                 ],
             }*/
-        }
+        },
+        "/interpolation/lagrange": {
+            "get": {
+                "tags": [
+                "Interpolation"
+                ],
+                "summary": "lagrange interpolation",
+                "description": "",
+                "operationId": "lagrange",
+                "responses": {
+                "200": {
+                    "description": "Valid input"
+                }
+                }
+            },
+            /*
+            "get": {
+                "tag":[
+                    "Root of Equation"
+                ],
+            }*/
+        },
+        "/interpolation/spline": {
+            "get": {
+                "tags": [
+                "Interpolation"
+                ],
+                "summary": "spline interpolation",
+                "description": "",
+                "operationId": "spline",
+                "responses": {
+                "200": {
+                    "description": "Valid input"
+                }
+                }
+            },
+            /*
+            "get": {
+                "tag":[
+                    "Root of Equation"
+                ],
+            }*/
+        },
     },
     //
-    "securityDefinitions": {
-      "petstore_auth": {
-        "type": "oauth2",
-        "authorizationUrl": "http://petstore.swagger.io/oauth/dialog",
-        "flow": "implicit",
-        "scopes": {
-          "write:pets": "modify pets in your account",
-          "read:pets": "read your pets"
-        }
-      },
-      "api_key": {
-        "type": "apiKey",
-        "name": "api_key",
-        "in": "header"
-      }
-    },
   }
 
-function App ()
+function swag ()
 {
     return(
         //<SwaggerUI url="https://petstore.swagger.io/v2/swagger" />
@@ -456,4 +281,5 @@ function App ()
     )
 }
 
-export default App ;
+
+export default swag ;

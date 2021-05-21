@@ -7,6 +7,7 @@ import addelement from '../../fumction/addelement';
 import resetelement from '../../fumction/resetElement';
 import Fixed from '../../fumction/Fixed';
 import { abs } from 'mathjs';
+import axios from 'axios';
 
 
 const math = require('mathjs');
@@ -329,6 +330,26 @@ function App() {
       }
     }
   }
+  async function api_call ()
+  {
+      try{
+          const data = await axios.get("https://my-json-server.typicode.com/ArKa47/api/root_of_equation/falsi").then(response => response.data)
+          console.log(data)
+          let example_fnc = data["Function"];
+          document.getElementById("equation").value=example_fnc;
+          let xl = data["xl"];
+          document.getElementById("xl").value=xl;
+          let xr = data["xr"];
+          document.getElementById("xr").value=xr;
+          let inter = data["interval"];
+          document.getElementById("time").value=inter;
+          let epsi = data["Epsilon"];
+          document.getElementById("epsilon").value=epsi;
+      }catch(err){
+          document.getElementById("cheese").innerHTL=err;
+      }
+  }
+  
 
   return(
   <div className="App">
@@ -384,6 +405,8 @@ function App() {
                 <input class="input is-info" type="text" placeholder="Epsilon(error)" id="epsilon"></input>
               </span>
               <button className="button is-info" onClick={iteration_call} id="iteration">Start Iteration</button>
+              <span> </span>
+              <span className="button is-danger" onClick={api_call} id="api_call">Get example</span>
             </span>
           </div>
         </div>

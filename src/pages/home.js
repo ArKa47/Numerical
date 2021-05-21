@@ -29,8 +29,7 @@ class home extends Component {
                 <br></br>
                 <h1 className="title is-1" id="pop" onClick={this.something}>NUMERICAL WEB PAGE</h1>
                 <br></br>
-                <h2 className="page-title">PRESENT SWK</h2>
-                <p className="button button-large is-primary"><a href="https://google.com/" target="_blank">START</a></p>
+                <p className="page-title">PRESENT SWK</p>
               </div>
             </section>
           </div>

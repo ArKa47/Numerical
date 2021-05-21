@@ -1,5 +1,5 @@
+import lagrange from '../../pictures/lagrange.png'
 import React, { useState } from 'react';
-import newton_pic from '../../pictures/newton_i.png'
 import prepare from '../../fumction/matrix_prepare'
 import axios from 'axios';
 import addinput from '../../fumction/addinput'
@@ -277,10 +277,10 @@ function Newton_i ()
         <div className="App">
             <br></br>
             <div className="container">
-                <h1 className="title is-1" id="test">Newton interpolation</h1>
+                <h1 className="title is-1" id="test">Lagrange interpolation</h1>
                 <h1 className="subtitle">interpolation</h1>
                 <br></br>
-                <img src={newton_pic} alt="newton"/>
+                <img src={lagrange} alt="lagrange"/>
                 <div className="cute-mid">
                     <br></br>
                     <p>Formular is : Above ^ </p>

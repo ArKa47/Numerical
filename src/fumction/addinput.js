@@ -7,6 +7,7 @@ const addelement = (str, where, id) =>
     para.className="my-input";
     para.id=id;
     para.value=str;
+    para.hidden=false;
     var element = document.getElementById(where);
     element.appendChild(para);
 }

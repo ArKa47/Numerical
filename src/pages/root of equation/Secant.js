@@ -7,7 +7,7 @@ import addelement from '../../fumction/addelement';
 import resetelement from '../../fumction/resetElement';
 import { abs } from 'mathjs';
 import Fixed from '../../fumction/Fixed';
-
+import axios from 'axios';
 
 const math = require('mathjs');
 
@@ -310,6 +310,25 @@ function App() {
       }
     }
   }
+  async function api_call ()
+  {
+      try{
+          const data = await axios.get("https://my-json-server.typicode.com/ArKa47/api/root_of_equation/secant").then(response => response.data)
+          console.log(data)
+          let example_fnc = data["Function"];
+          document.getElementById("equation").value=example_fnc;
+          let x1 = data["x1"];
+          document.getElementById("x1").value=x1;
+          let x2 = data["x2"];
+          document.getElementById("x2").value=x2;
+          let inter = data["interval"];
+          document.getElementById("time").value=inter;
+          let range = data["Range"];
+          document.getElementById("range").value=range;
+      }catch(err){
+          document.getElementById("cheese").innerHTL=err;
+      }
+  }
 
   return(
   <div className="App">
@@ -323,12 +342,9 @@ function App() {
         <div className="my-container">
             <div className="content">
                 <span className="cute">
-                    <p>Step</p>
+                    <p>Detail</p>
                     <ul>
-                        <li>In fermentum leo eu lectus mollis, quis dictum mi aliquet.</li>
-                        <li>Morbi eu nulla lobortis, lobortis est in, fringilla felis.</li>
-                        <li>Aliquam nec felis in sapien venenatis viverra fermentum nec lectus.</li>
-                        <li>Ut non enim metus.</li>
+                        <li>Root of equation.</li>
                     </ul>
                     <br></br>
                     <br></br>
@@ -365,6 +381,8 @@ function App() {
                 <input class="input is-info" type="text" placeholder="Range" id="range"></input>
               </span>
               <button className="button is-info" onClick={iteration_call} id="iteration">Start Iteration</button>
+              <span> </span>
+              <span className="button is-danger" onClick={api_call} id="api_call">Get example</span>
             </span>
           </div>
         </div>

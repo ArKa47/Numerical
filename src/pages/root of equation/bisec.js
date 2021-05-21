@@ -5,7 +5,7 @@ import bisection from '../../pictures/bisection.jpg';
 import functionPlot from "function-plot";
 import addelement from '../../fumction/addelement';
 import resetelement from '../../fumction/resetElement';
-
+import axios from 'axios';
 
 const math = require('mathjs');
 
@@ -242,6 +242,26 @@ function App() {
       }
     }
   }
+  async function api_call ()
+  {
+      try{
+          const data = await axios.get("https://my-json-server.typicode.com/ArKa47/api/root_of_equation/bisec").then(response => response.data)
+          console.log(data)
+          let example_fnc = data["Function"];
+          document.getElementById("equation").value=example_fnc;
+          let xl = data["xl"];
+          document.getElementById("xl").value=xl;
+          let xr = data["xr"];
+          document.getElementById("xr").value=xr;
+          let inter = data["interval"];
+          document.getElementById("time").value=inter;
+          let epsi = data["Epsilon"];
+          document.getElementById("epsilon").value=epsi;
+      }catch(err){
+          document.getElementById("cheese").innerHTL=err;
+      }
+  }
+  
 
   return(
   <div className="App">
@@ -255,12 +275,9 @@ function App() {
         <div className="my-container">
             <div className="content">
                 <span className="cute">
-                    <p>Step</p>
+                    <p>Detail</p>
                     <ul>
-                        <li>In fermentum leo eu lectus mollis, quis dictum mi aliquet.</li>
-                        <li>Morbi eu nulla lobortis, lobortis est in, fringilla felis.</li>
-                        <li>Aliquam nec felis in sapien venenatis viverra fermentum nec lectus.</li>
-                        <li>Ut non enim metus.</li>
+                        <li>Find root of equation.</li>
                     </ul>
                     <br></br>
                     <br></br>
@@ -297,6 +314,8 @@ function App() {
                 <input class="input is-info" type="text" placeholder="Epsilon(error)" id="epsilon"></input>
               </span>
               <button className="button is-info" onClick={iteration_call} id="iteration">Start Iteration</button>
+              <span> </span>
+              <span className="button is-danger" onClick={api_call} id="api_call">Get example</span>
             </span>
           </div>
         </div>

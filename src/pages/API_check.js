@@ -22,16 +22,16 @@ const showTime =(data)=>
     addelement("interval : "+data[0]["interval"],"show");
     addelement("epsilon : "+data[0]["Epsilon"],"show");
     addelement("------","show");
-    addelement("Function : "+data[1]["Function"],"show");
-    addelement("initial x : "+data[1]["initial x"],"show");
-    addelement("interval : "+data[1]["interval"],"show");
-    addelement("Range : "+data[1]["Range"],"show");
-    addelement("------","show");
     addelement("Function : "+data[2]["Function"],"show");
-    addelement("x1 : "+data[2]["x1"],"show");
-    addelement("x2 : "+data[2]["x2"],"show");
+    addelement("initial x : "+data[2]["initial x"],"show");
     addelement("interval : "+data[2]["interval"],"show");
     addelement("Range : "+data[2]["Range"],"show");
+    addelement("------","show");
+    addelement("Function : "+data[3]["Function"],"show");
+    addelement("x1 : "+data[3]["x1"],"show");
+    addelement("x2 : "+data[3]["x2"],"show");
+    addelement("interval : "+data[3]["interval"],"show");
+    addelement("Range : "+data[3]["Range"],"show");
 }
 const showTime1 =(data)=>
 {
@@ -78,7 +78,7 @@ const showTime2 =(data)=>
 async function pop ()
 {
     try{
-        const data = await axios.get("https://my-json-server.typicode.com/ArKa47/api/posts").then(response => response.data)
+        const data = await axios.get("https://my-json-server.typicode.com/ArKa47/api/root_of_equation").then(response => response.data)
         showTime(data);
     }catch(err){
         console.log(err);
@@ -96,7 +96,7 @@ async function pop1 ()
 async function pop2 ()
 {
     try{
-        const data = await axios.get("https://my-json-server.typicode.com/ArKa47/api/newtonInter").then(response => response.data)
+        const data = await axios.get("https://my-json-server.typicode.com/ArKa47/api/interpolation").then(response => response.data)
         showTime2(data);
     }catch(err){
         console.log(err);

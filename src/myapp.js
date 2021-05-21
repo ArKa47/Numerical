@@ -53,14 +53,17 @@ class App extends Component {
                     Matrix
                   </a>
                   <div class="navbar-dropdown">
-                    <Link to="crammer" class="navbar-item">
+                    <Link to="/crammer" class="navbar-item">
                       <p className="has-text-dark">Crammer</p>
                     </Link>
-                    <Link to="guass" class="navbar-item">
-                      <p className="has-text-dark">Guass Elimination</p>
+                    <Link to="/guass" class="navbar-item">
+                      <p className="has-text-dark">Gauss Elimination</p>
                     </Link>
-                    <Link to="Falsi" class="navbar-item">
-                      <p className="has-text-dark">Overview</p>
+                    <Link to="/gauss_jordan" class="navbar-item">
+                      <p className="has-text-dark">Gauss Jordan</p>
+                    </Link>
+                    <Link to="/lu_decomposition" class="navbar-item">
+                      <p className="has-text-dark">Lu decomposition</p>
                     </Link>
                   </div>
                 </div>
@@ -72,14 +75,20 @@ class App extends Component {
                     <Link to="/Newton_Inter" class="navbar-item">
                       <p className="has-text-dark">Newton Interpolation</p>
                     </Link>
-                    <Link to="Falsi" class="navbar-item">
-                      <p className="has-text-dark">Overview</p>
+                    <Link to="/lagrange_Inter" class="navbar-item">
+                      <p className="has-text-dark">Lagrange Interpolation</p>
+                    </Link>
+                    <Link to="/spline_Inter" class="navbar-item">
+                      <p className="has-text-dark">Spline Interpolation</p>
+                    </Link>
+                    <Link to="/TEST" class="navbar-item">
+                      <p className="has-text-dark">TEST</p>
                     </Link>
                   </div>
                 </div>
                 <div class="navbar-item has-dropdown is-hoverable">
                   <a class="navbar-link">
-                    Regression
+                    Api controll
                   </a>
                   <div class="navbar-dropdown">
                     <Link to="/Api" class="navbar-item">
