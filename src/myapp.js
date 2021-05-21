@@ -81,9 +81,6 @@ class App extends Component {
                     <Link to="/spline_Inter" class="navbar-item">
                       <p className="has-text-dark">Spline Interpolation</p>
                     </Link>
-                    <Link to="/TEST" class="navbar-item">
-                      <p className="has-text-dark">TEST</p>
-                    </Link>
                   </div>
                 </div>
                 <div class="navbar-item has-dropdown is-hoverable">

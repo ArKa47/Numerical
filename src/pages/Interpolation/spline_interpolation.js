@@ -297,7 +297,7 @@ function Newton_i ()
 
                     <div className="my-SubcontainerM">
                         <br></br>
-                        <div className="float-left"><div className="button is-primary" onClick={final_method}>Toggle Real Grahp</div></div>
+                        <div className="float-left"><div className="button is-primary" onClick={final_method}>Toggle Real Graph</div></div>
                         <br></br>
                         <p id="test">In put x to predict and number of n in x,y table</p>
                         <br></br>
