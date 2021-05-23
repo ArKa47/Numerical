@@ -33,7 +33,6 @@ let data = {
       }
     ],
     "schemes": [
-      "https",
       "http"
     ],
     //

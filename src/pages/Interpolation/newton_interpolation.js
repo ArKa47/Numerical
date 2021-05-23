@@ -58,11 +58,19 @@ function Newton_i ()
     }
     const strand = (e) =>
     {
-        document.getElementById("main").hidden=false;
-        document.getElementById("cal_option").hidden=true;
-        let n = parseInt(document.getElementById("n").value);
-        count=n;
-        test(count);
+        n = parseInt(document.getElementById("n").value);
+        if(n>6)
+        {
+            alert("Max capacity of n is 6")
+            n=6;
+            document.getElementById("n").value=6;
+        }
+        else{
+            document.getElementById("main").hidden=false;
+            document.getElementById("cal_option").hidden=true;
+            count=n;
+            test(count);
+        }
     }
     const cal = () =>
     {
@@ -110,19 +118,31 @@ function Newton_i ()
     }
     function submite()//you get metaix since submite is occur
     {
-        g_exit=true;
-        document.getElementById("pp").hidden=false;
-        n = parseInt(document.getElementById("n").value);
-        let str = "mat";
-        xy_matrix = prepare(n,str);
-        console.log(xy_matrix);
-        let take = plotPoint(xy_matrix,arr_data,n)
-        isolate = take[0];
-        //console.log(take[0])
-        arr_data = take[1];
-        document.getElementById("cal_option").hidden=false;
-        document.getElementById("doll").hidden=true;
-        upd();
+        try{
+            g_exit=true;
+            document.getElementById("pp").hidden=false;
+            n = parseInt(document.getElementById("n").value);
+            let str = "mat";
+            xy_matrix = prepare(n,str);
+            console.log(xy_matrix);
+            let take = plotPoint(xy_matrix,arr_data,n)
+            isolate = take[0];
+            //console.log(take[0])
+            arr_data = take[1];
+            document.getElementById("cal_option").hidden=false;
+            document.getElementById("doll").hidden=true;
+            upd();
+        }
+        catch(e)
+        {
+            console.log(isolate)
+            isolate = data_defual;
+            alert("BAD input please input valid value error code : "+e)
+            document.getElementById("cal_option").hidden=true;
+            document.getElementById("doll").hidden=false;
+            document.getElementById("pp").hidden=true;
+            g_exit=false;
+        }
     }
     function tGrid()
     {
@@ -142,74 +162,118 @@ function Newton_i ()
     }
     function linear()
     {
-        submite();
-        let take = linear_call(xy_matrix,arr_data,n);
-        isolate = take[0];
-        arr_data = take[1];
-        upd();
-        ///
-        let linear_arr = [];
-        linear_arr[0] = xy_matrix[0];
-        linear_arr[1] = xy_matrix[1];
-        let equation = newton(linear_arr,linear_arr.length)
-        let x = parseFloat(document.getElementById("x").value);
-        const scopex = {
-            x: x
-          }
-        let fx = math.evaluate(equation,scopex);
-        //
-        upResult(fx,equation,"Method Linear",x)
+        try{
+            if(n<2)
+            {
+                alert("linear require 2 n");
+            }
+            else{
+                submite();
+                let take = linear_call(xy_matrix,arr_data,n);
+                isolate = take[0];
+                arr_data = take[1];
+                upd();
+                ///
+                let linear_arr = [];
+                linear_arr[0] = xy_matrix[0];
+                linear_arr[1] = xy_matrix[1];
+                let equation = newton(linear_arr,linear_arr.length)
+                let x = parseFloat(document.getElementById("x").value);
+                const scopex = {
+                    x: x
+                }
+                let fx = math.evaluate(equation,scopex);
+                //
+                upResult(fx,equation,"Method Linear",x)
+            }
+        }
+        catch(e)
+        {
+            isolate=data_defual;
+            alert("BAD input please validate your input")
+        }
     }
     function quadratic()
     {
-        submite();
-        let take = quard(xy_matrix,arr_data,n);
-        isolate = take[0];
-        console.log(isolate)
-        arr_data = take[1];
-        console.log(arr_data);
-        upd();
-        //
-        let linear_arr = [];
-        linear_arr[0] = xy_matrix[0];
-        linear_arr[1] = xy_matrix[1];
-        linear_arr[2] = xy_matrix[2];
-        let equation = newton(linear_arr,linear_arr.length)
-        let x = parseFloat(document.getElementById("x").value);
-        const scopex = {
-            x: x
-          }
-        let fx = math.evaluate(equation,scopex);
-        //
-        upResult(fx,equation,"Method Quadratic",x)
+
+        try
+        {
+            if(n<3)
+            {
+                alert("quardratic require 3 n")
+            }
+            else
+            {
+                submite();
+                let take = quard(xy_matrix,arr_data,n);
+                isolate = take[0];
+                console.log(isolate)
+                arr_data = take[1];
+                console.log(arr_data);
+                upd();
+                //
+                console.log("predict fx and equation of quadratic")
+                let linear_arr = [];
+                linear_arr[0] = xy_matrix[0];
+                linear_arr[1] = xy_matrix[1];
+                linear_arr[2] = xy_matrix[2];
+                let equation = newton(linear_arr,linear_arr.length)
+                let x = parseFloat(document.getElementById("x").value);
+                const scopex = {
+                    x: x
+                }
+                let fx = math.evaluate(equation,scopex);
+                console.log("fx = "+fx);
+                //
+                upResult(fx,equation,"Method Quadratic",x)
+            }
+        }
+        catch(e)
+        {
+            isolate=data_defual;
+            alert("BAD input please validate your input")
+        }
     }
     function polynomial()
     {
-        submite();
-        let equation = newton(xy_matrix,n);
-        arr_data.pop();
-        arr_data.push({
-            fn: equation,
-            graphType: 'polyline',
-            color: '#f4a460'//sand brown
-        });
-        isolate = {
-            target: '#pp',
-            title: 'Visualize',
-            width: 700,
-            height: 500,
-            grid: true,
-            data: arr_data
+        try{
+            if(n<4)
+            {
+                alert("polynomial require 4 n")
+            }
+            else{
+                submite();
+                let equation = newton(xy_matrix,n);
+                arr_data.pop();
+                arr_data.push({
+                    fn: equation,
+                    graphType: 'polyline',
+                    color: '#f4a460'//sand brown
+                });
+                isolate = {
+                    target: '#pp',
+                    title: 'Visualize',
+                    width: 700,
+                    height: 500,
+                    grid: true,
+                    data: arr_data
+                }
+                upd();
+                //
+                let x = parseFloat(document.getElementById("x").value);
+                const scopex = {
+                    x: x
+                }
+                let fx = math.evaluate(equation,scopex);
+                //
+                upResult(fx,equation,"Method Polynomial",x)
+            }
         }
-        upd();
-        //
-        let x = parseFloat(document.getElementById("x").value);
-        const scopex = {
-            x: x
-          }
-        let fx = math.evaluate(equation,scopex);
-        //
-        upResult(fx,equation,"Method Polynomial",x)
+        catch(e)
+        {
+            isolate=data_defual;
+            alert("BAD input please validate your input")
+        }
     }
     function upd()
     {

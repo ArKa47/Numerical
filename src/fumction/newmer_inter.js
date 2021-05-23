@@ -28,7 +28,7 @@ function newton_util (arr, arr_mock,n)
        arr_shadow[i-1] = pop;
        //console.log(arr_shadow[i-1])
     }
-    let nn=n-1
+    //let nn=n-1
     shadow++;
     //console.log("--------------------------------arr_shadow = " + arr_shadow.length + " n = " + nn)
     newton_util(arr, arr_shadow, n-1)
@@ -45,7 +45,7 @@ function newmer_inter (arr,n)
         arr_mock[i] = arr[i][1];
     }
     newton_util(arr,arr_mock,n);
-    console.log("ans leng = "+b.length);
+    console.log("b leng = "+b.length);
     //
     let predic_newton=b[0]
     let holdX="";
