@@ -119,7 +119,7 @@
 }
 
 .sub_chart-container {
-  border-top-style: solid;
+  border-top-style: dashed;
   border-top-color: rgb(86, 247, 247);
   border-bottom-style: solid;
   border-bottom-color: rgb(86, 247, 247);
