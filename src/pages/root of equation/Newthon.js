@@ -313,7 +313,7 @@ function App() {
   <div className="App">
     <div className="container">
         <br></br>
-        <h1 class="title is-1">Newthon Rhapson</h1>
+        <h1 class="title is-1">Newthon Rhapson test</h1>
         <h2 class="subtitle"> bracketing bethod</h2>
         <br></br>
         <img src={newthon} alt="newthon" />
